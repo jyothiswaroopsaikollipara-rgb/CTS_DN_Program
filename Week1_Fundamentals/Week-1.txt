@@ -1,0 +1,163 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 00000097 AC8F:C019
+D:.
+ª   README.md
+ª   Week1_Structure.txt
+ª   
++---Week1_Fundamentals
+    ª   README.md
+    ª   
+    +---Module_1_DESIGN_PATTERNS_AND_PRINCIPLES
+    ª   ª   README.md
+    ª   ª   
+    ª   +---Additional_Exercises
+    ª   ª   +---SOLID_Principles
+    ª   ª           DIP.java
+    ª   ª           ISP.java
+    ª   ª           LSP.java
+    ª   ª           OCP.java
+    ª   ª           README.md
+    ª   ª           SRP.java
+    ª   ª           
+    ª   +---Mandatory_Exercises
+    ª       +---Factory_Method_Pattern
+    ª       ª       Bike.java
+    ª       ª       Car.java
+    ª       ª       FactoryMain.java
+    ª       ª       README.md
+    ª       ª       Vehicle.java
+    ª       ª       VehicleFactory.java
+    ª       ª       
+    ª       +---Singleton_Pattern
+    ª               README.md
+    ª               Singleton.java
+    ª               SingletonMain.java
+    ª               
+    +---Module_2_DATA_STRUCTURES_AND_ALGORITHMS
+    ª   ª   README.md
+    ª   ª   
+    ª   +---Mandatory_Exercises
+    ª       +---Ecommerce_Search_Function
+    ª       ª       EcommerceMain.java
+    ª       ª       Output.png
+    ª       ª       Product.java
+    ª       ª       README.md
+    ª       ª       SearchEngine.java
+    ª       ª       
+    ª       +---Financial_Forecasting
+    ª               ForecastCalculator.java
+    ª               ForecastMain.java
+    ª               README.md
+    ª               
+    +---Module_3_PLSQL_PROGRAMMING
+    ª   ª   README.md
+    ª   ª   
+    ª   +---Mandatory_Exercises
+    ª       +---Exercise_1_Control_Structures
+    ª       ª       ControlStructures.sql
+    ª       ª       Output.png
+    ª       ª       README.md
+    ª       ª       
+    ª       +---Exercise_2_Stored_Procedures
+    ª               README.md
+    ª               StoredProcedures.sql
+    ª               
+    +---Module_4_TDD_LOGGING_FRAMEWORK
+        ª   README.md
+        ª   
+        +---Mandatory_Exercises
+            +---junit-testing
+                ª   pom.xml
+                ª   README.md
+                ª   
+                +---.mvn
+                ª       jvm.config
+                ª       maven.config
+                ª       
+                +---src
+                ª   +---main
+                ª   ª   +---java
+                ª   ª       +---com
+                ª   ª           +---cts
+                ª   ª               +---module4
+                ª   ª                       Calculator.java
+                ª   ª                       EvenChecker.java
+                ª   ª                       ExceptionThrower.java
+                ª   ª                       ExternalApi.java
+                ª   ª                       MyService.java
+                ª   ª                       PerformanceTester.java
+                ª   ª                       
+                ª   +---test
+                ª       +---java
+                ª           +---com
+                ª               +---cts
+                ª                   +---module4
+                ª                           AAAExampleTest.java
+                ª                           AssertionsTest.java
+                ª                           CalculatorTest.java
+                ª                           EvenCheckerTest.java
+                ª                           ExceptionThrowerTest.java
+                ª                           MyServiceTest.java
+                ª                           OrderedTests.java
+                ª                           PerformanceTesterTest.java
+                ª                           
+                +---target
+                    +---classes
+                    ª   +---com
+                    ª       +---cts
+                    ª           +---module4
+                    ª                   Calculator.class
+                    ª                   EvenChecker.class
+                    ª                   ExceptionThrower.class
+                    ª                   ExternalApi.class
+                    ª                   MyService.class
+                    ª                   PerformanceTester.class
+                    ª                   
+                    +---generated-sources
+                    ª   +---annotations
+                    +---generated-test-sources
+                    ª   +---test-annotations
+                    +---maven-status
+                    ª   +---maven-compiler-plugin
+                    ª       +---compile
+                    ª       ª   +---default-compile
+                    ª       ª           createdFiles.lst
+                    ª       ª           inputFiles.lst
+                    ª       ª           
+                    ª       +---testCompile
+                    ª           +---default-testCompile
+                    ª                   createdFiles.lst
+                    ª                   inputFiles.lst
+                    ª                   
+                    +---surefire-reports
+                    ª       2026-06-21T19-30-49_537.dumpstream
+                    ª       com.cts.module4.AAAExampleTest.txt
+                    ª       com.cts.module4.AssertionsTest.txt
+                    ª       com.cts.module4.CalculatorTest.txt
+                    ª       com.cts.module4.EvenCheckerTest.txt
+                    ª       com.cts.module4.ExceptionThrowerTest.txt
+                    ª       com.cts.module4.MyServiceTest.txt
+                    ª       com.cts.module4.OrderedTests.txt
+                    ª       com.cts.module4.PerformanceTesterTest.txt
+                    ª       TEST-com.cts.module4.AAAExampleTest.xml
+                    ª       TEST-com.cts.module4.AssertionsTest.xml
+                    ª       TEST-com.cts.module4.CalculatorTest.xml
+                    ª       TEST-com.cts.module4.EvenCheckerTest.xml
+                    ª       TEST-com.cts.module4.ExceptionThrowerTest.xml
+                    ª       TEST-com.cts.module4.MyServiceTest.xml
+                    ª       TEST-com.cts.module4.OrderedTests.xml
+                    ª       TEST-com.cts.module4.PerformanceTesterTest.xml
+                    ª       
+                    +---test-classes
+                        +---com
+                            +---cts
+                                +---module4
+                                        AAAExampleTest.class
+                                        AssertionsTest.class
+                                        CalculatorTest.class
+                                        EvenCheckerTest.class
+                                        ExceptionThrowerTest.class
+                                        MyServiceTest.class
+                                        OrderedTests.class
+                                        PerformanceTesterTest.class
+                                        
