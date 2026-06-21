@@ -1,12 +1,13 @@
 # E-Commerce Search Function
 
 ## Objective
-Implement product searching using Linear Search.
+Implement product searching using Linear Search and BinarySearch.
 
 ## Concepts Used
 
 - Arrays
 - Linear Search
+- Binary Search
 - Time Complexity
 
 ## Files
@@ -18,12 +19,19 @@ Implement product searching using Linear Search.
 ## Output
 
 104 Watch Accessories
+104 Watch Accessories
 
-## Complexity
+## Complexity of Linear Search
 
 Best Case : O(1)
 
 Worst Case : O(n)
+
+## Complexity of Linear Search
+
+Best Case : O(1)
+
+Worst Case : O(logn)
 
 ## Applications
 

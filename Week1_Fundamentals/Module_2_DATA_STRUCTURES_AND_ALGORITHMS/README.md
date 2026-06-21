@@ -14,6 +14,7 @@ This module focuses on applying data structures and algorithms to solve real-wor
 
 - Arrays
 - Linear Search
+- Binary Search
 - Time Complexity
 
 #### Files

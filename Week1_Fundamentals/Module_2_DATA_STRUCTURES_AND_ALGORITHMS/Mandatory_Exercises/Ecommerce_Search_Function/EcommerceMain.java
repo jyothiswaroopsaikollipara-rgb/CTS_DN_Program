@@ -32,6 +32,20 @@ public class EcommerceMain {
 
         }
 
+        Product result1 =
+        SearchEngine.binarySearch(products,"Watch");
+
+        if (result1 != null) {
+
+        System.out.println(result1);
+
+    }
+
+        else {
+
+        System.out.println("Product not found");
+
+         }
     }
 
 }
