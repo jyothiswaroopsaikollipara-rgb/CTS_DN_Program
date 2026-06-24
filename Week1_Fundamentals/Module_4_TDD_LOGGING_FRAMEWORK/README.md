@@ -92,7 +92,7 @@ WARN ... This is a warning message
 - Maven 3.9.16
 - JUnit 5
 - Mockito
-
+- SLF4J Logging
 ---
 
 ## Learning Outcomes
