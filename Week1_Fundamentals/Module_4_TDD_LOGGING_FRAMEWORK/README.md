@@ -63,6 +63,23 @@ All test cases execute successfully.
 BUILD SUCCESS
 
 ---
+## SLF4J Logging
+
+### Logging Error Messages and Warning Levels
+
+Concepts Used:
+
+- Logger
+- LoggerFactory
+- logger.error()
+- logger.warn()
+- Logback
+
+### Expected Output
+
+ERROR ... This is an error message
+
+WARN ... This is a warning message
 
 ## Tools Used
 
