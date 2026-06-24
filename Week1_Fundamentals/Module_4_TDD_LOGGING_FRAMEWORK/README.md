@@ -80,7 +80,11 @@ Concepts Used:
 ERROR ... This is an error message
 
 WARN ... This is a warning message
+
 <img width="864" height="177" alt="Screenshot 2026-06-24 220926" src="https://github.com/user-attachments/assets/594b2472-d934-48ab-8382-e182b652c3b1" />
+
+<img width="787" height="46" alt="Screenshot 2026-06-24 220947" src="https://github.com/user-attachments/assets/c6d9692e-6119-4ad2-887f-e14f17b6e903" />
+
 
 ## Tools Used
 
