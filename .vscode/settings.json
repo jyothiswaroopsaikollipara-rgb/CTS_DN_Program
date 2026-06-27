@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "Week1_Fundamentals/Module_2_DATA_STRUCTURES_AND_ALGORITHMS/Mandatory_Exercises/Financial_Forecasting",
+        "Week1_Fundamentals/Module_2_DATA_STRUCTURES_AND_ALGORITHMS/Mandatory_Exercises/Ecommerce_Search_Function",
+        "Week2_Spring_Framework/Module_6_SPRING_DATA_JPA_WITH_SPRING_BOOT_HIBERNATE/Mandatory_Exercises/spring-data-jpa-demo/src/main/java/com/cts/jpa/main"
+    ]
+}
