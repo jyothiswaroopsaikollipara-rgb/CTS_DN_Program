@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.Date;
+
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
 
 @RestController
 public class AuthenticationController {
@@ -27,7 +33,9 @@ public class AuthenticationController {
         String user = getUser(authHeader);
 
         Map<String, String> map = new HashMap<>();
-        map.put("token", "");
+        String token = generateJwt(user);
+
+        map.put("token", token);
 
         LOGGER.debug("Authenticated User : {}", user);
 
@@ -55,4 +63,31 @@ public class AuthenticationController {
 
     return user;
 }
+
+
+private String generateJwt(String user) {
+
+    LOGGER.info("START");
+
+    JwtBuilder builder = Jwts.builder();
+
+    builder.setSubject(user);
+
+    // Current time
+    builder.setIssuedAt(new Date());
+
+    // Expiry after 20 minutes
+    builder.setExpiration(new Date((new Date()).getTime() + 1200000));
+
+    builder.signWith(SignatureAlgorithm.HS256, "secretkey");
+
+    String token = builder.compact();
+
+    LOGGER.debug("Generated Token : {}", token);
+
+    LOGGER.info("END");
+
+    return token;
+}
+
 }
