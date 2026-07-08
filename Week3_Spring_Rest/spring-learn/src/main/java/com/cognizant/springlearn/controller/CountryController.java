@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.cognizant.springlearn.bean.Country;
 import com.cognizant.springlearn.service.CountryService;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class CountryController {
@@ -43,5 +44,16 @@ public class CountryController {
         LOGGER.info("END");
 
         return countries;
+    }
+    @GetMapping("/countries/{code}")
+    public Country getCountry(@PathVariable String code) {
+
+        LOGGER.info("START");
+
+        Country country = countryService.getCountry(code);
+
+        LOGGER.info("END");
+
+        return country;
     }
 }

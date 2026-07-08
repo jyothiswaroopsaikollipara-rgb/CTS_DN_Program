@@ -24,4 +24,16 @@ public class CountryService {
         return (List<Country>) context.getBean("countryList");
     }
 
+    public Country getCountry(String code) {
+
+    for (Country country : getAllCountries()) {
+
+        if (country.getCode().equalsIgnoreCase(code)) {
+            return country;
+        }
+    }
+
+    return null;
+}
+
 }
