@@ -1,5 +1,7 @@
 package com.cognizant.springlearn.dao;
 
+import java.util.ArrayList;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Repository;
@@ -9,11 +11,21 @@ import com.cognizant.springlearn.bean.Employee;
 @Repository
 public class EmployeeDao {
 
-    private ApplicationContext context =
-            new ClassPathXmlApplicationContext("employee.xml");
+    private static ArrayList<Employee> EMPLOYEE_LIST;
 
-    public Employee getEmployee() {
+    @SuppressWarnings("unchecked")
+    public EmployeeDao() {
 
-        return context.getBean("employee", Employee.class);
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("employee.xml");
+
+        EMPLOYEE_LIST =
+                (ArrayList<Employee>) context.getBean("employeeList");
     }
+
+    public ArrayList<Employee> getAllEmployees() {
+
+        return EMPLOYEE_LIST;
+    }
+
 }
