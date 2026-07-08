@@ -1,5 +1,7 @@
 package com.cognizant.springlearn.dao;
 
+import java.util.ArrayList;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Repository;
@@ -9,11 +11,20 @@ import com.cognizant.springlearn.bean.Department;
 @Repository
 public class DepartmentDao {
 
-    private ApplicationContext context =
-            new ClassPathXmlApplicationContext("employee.xml");
+    private static ArrayList<Department> DEPARTMENT_LIST;
 
-    public Department getDepartment() {
+    @SuppressWarnings("unchecked")
+    public DepartmentDao() {
 
-        return context.getBean("department", Department.class);
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("employee.xml");
+
+        DEPARTMENT_LIST =
+                (ArrayList<Department>) context.getBean("departmentList");
+    }
+
+    public ArrayList<Department> getAllDepartments() {
+
+        return DEPARTMENT_LIST;
     }
 }
