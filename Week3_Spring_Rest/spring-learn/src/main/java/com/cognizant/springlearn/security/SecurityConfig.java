@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import com.cognizant.springlearn.filter.JwtAuthorizationFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
@@ -30,11 +32,14 @@ public class SecurityConfig {
 
         http
             .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/countries").hasRole("USER")
-            .requestMatchers("/authenticate").hasAnyRole("USER")
-            .anyRequest().authenticated())
+        .requestMatchers("/authenticate").permitAll()
+        .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults());
 
+            http.addFilterBefore(
+        new JwtAuthorizationFilter(),
+        UsernamePasswordAuthenticationFilter.class);
+        
         return http.build();
     }
 }
