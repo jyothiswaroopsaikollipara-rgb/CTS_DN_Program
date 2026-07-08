@@ -24,6 +24,7 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 @RequestMapping("/countries")
@@ -97,4 +98,18 @@ public Country updateCountry(@RequestBody Country country) {
 
     return country;
 }
+
+@DeleteMapping("/{code}")
+public void deleteCountry(@PathVariable String code)
+        throws CountryNotFoundException {
+
+    LOGGER.info("START");
+
+    Country country = countryService.getCountry(code);
+
+    LOGGER.debug("Deleting Country : {}", country);
+
+    LOGGER.info("END");
+}
+
 }
