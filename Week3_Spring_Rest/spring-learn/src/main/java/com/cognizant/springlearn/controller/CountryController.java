@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-
+import jakarta.validation.Valid;
 import com.cognizant.springlearn.bean.Country;
 import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.service.CountryService;
@@ -62,31 +62,16 @@ public class CountryController {
     }
 
     @PostMapping
-    public Country addCountry(@RequestBody Country country) {
+public Country addCountry(@Valid @RequestBody Country country) {
 
-        LOGGER.info("START");
+    LOGGER.info("START");
 
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
+    LOGGER.debug("Country : {}", country);
 
-        Set<ConstraintViolation<Country>> violations = validator.validate(country);
+    LOGGER.info("END");
 
-        List<String> errors = new ArrayList<>();
-
-        for (ConstraintViolation<Country> violation : violations) {
-            errors.add(violation.getMessage());
-        }
-
-        if (!violations.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, errors.toString());
-        }
-
-        LOGGER.debug("Country : {}", country);
-
-        LOGGER.info("END");
-
-        return country;
-    }
+    return country;
+}
     @PutMapping
 public Country updateCountry(@RequestBody Country country) {
 
