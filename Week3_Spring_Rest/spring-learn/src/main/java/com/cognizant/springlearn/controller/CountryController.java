@@ -18,6 +18,7 @@ import com.cognizant.springlearn.exception.CountryNotFoundException;
 
 
 @RestController
+@RequestMapping("/countries")
 public class CountryController {
 
     private static final Logger LOGGER =
@@ -37,18 +38,14 @@ public class CountryController {
 
         return country;
     }
-    @GetMapping("/countries")
-    public List<Country> getAllCountries() {
-
-        LOGGER.info("START");
-
-        List<Country> countries = countryService.getAllCountries();
-
-        LOGGER.info("END");
-
-        return countries;
-    }
-    @GetMapping("/countries/{code}")
+    @GetMapping
+public List<Country> getAllCountries() {
+    LOGGER.info("START");
+    List<Country> countries = countryService.getAllCountries();
+    LOGGER.info("END");
+    return countries;
+}
+    @GetMapping("/{code}")
 public Country getCountry(@PathVariable String code)
         throws CountryNotFoundException {
 
