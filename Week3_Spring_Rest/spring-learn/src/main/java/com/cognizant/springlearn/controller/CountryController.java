@@ -15,7 +15,8 @@ import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.service.CountryService;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.cognizant.springlearn.exception.CountryNotFoundException;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/countries")
@@ -52,6 +53,18 @@ public Country getCountry(@PathVariable String code)
     LOGGER.info("START");
 
     Country country = countryService.getCountry(code);
+
+    LOGGER.info("END");
+
+    return country;
+}
+
+@PostMapping
+public Country addCountry(@RequestBody Country country) {
+
+    LOGGER.info("START");
+
+    LOGGER.debug("Country : {}", country);
 
     LOGGER.info("END");
 
