@@ -3,7 +3,7 @@ package com.cognizant.springlearn.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
+import org.springframework.web.bind.annotation.PutMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,4 +86,15 @@ public class CountryController {
 
         return country;
     }
+    @PutMapping
+public Country updateCountry(@RequestBody Country country) {
+
+    LOGGER.info("START");
+
+    LOGGER.debug("Country : {}", country);
+
+    LOGGER.info("END");
+
+    return country;
+}
 }
