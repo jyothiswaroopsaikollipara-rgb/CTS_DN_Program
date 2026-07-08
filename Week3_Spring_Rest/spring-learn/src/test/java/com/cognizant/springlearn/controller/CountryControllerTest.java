@@ -18,11 +18,11 @@ public class CountryControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testGetCountry() throws Exception {
+public void testGetCountry() throws Exception {
 
-        mockMvc.perform(get("/country"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.code").value("IN"))
-                .andExpect(jsonPath("$.name").value("India"));
-    }
+    mockMvc.perform(get("/countries/IN"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.code").value("IN"))
+            .andExpect(jsonPath("$.name").value("India"));
+}
 }

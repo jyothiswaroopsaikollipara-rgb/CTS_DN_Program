@@ -1,22 +1,29 @@
 package com.cognizant.springlearn.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.server.ResponseStatusException;
+
 import com.cognizant.springlearn.bean.Country;
 import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.service.CountryService;
-import org.springframework.web.bind.annotation.PathVariable;
-import com.cognizant.springlearn.exception.CountryNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
 
 @RestController
 @RequestMapping("/countries")
@@ -28,46 +35,55 @@ public class CountryController {
     @Autowired
     private CountryService countryService;
 
-    @RequestMapping("/country")
-    public Country getCountryIndia() {
+    @GetMapping
+    public List<Country> getAllCountries() {
 
         LOGGER.info("START");
 
-        Country country = countryService.getCountry();
+        List<Country> countries = countryService.getAllCountries();
+
+        LOGGER.info("END");
+
+        return countries;
+    }
+
+    @GetMapping("/{code}")
+    public Country getCountry(@PathVariable String code)
+            throws CountryNotFoundException {
+
+        LOGGER.info("START");
+
+        Country country = countryService.getCountry(code);
 
         LOGGER.info("END");
 
         return country;
     }
-    @GetMapping
-public List<Country> getAllCountries() {
-    LOGGER.info("START");
-    List<Country> countries = countryService.getAllCountries();
-    LOGGER.info("END");
-    return countries;
-}
-    @GetMapping("/{code}")
-public Country getCountry(@PathVariable String code)
-        throws CountryNotFoundException {
 
-    LOGGER.info("START");
+    @PostMapping
+    public Country addCountry(@RequestBody Country country) {
 
-    Country country = countryService.getCountry(code);
+        LOGGER.info("START");
 
-    LOGGER.info("END");
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
 
-    return country;
-}
+        Set<ConstraintViolation<Country>> violations = validator.validate(country);
 
-@PostMapping
-public Country addCountry(@RequestBody Country country) {
+        List<String> errors = new ArrayList<>();
 
-    LOGGER.info("START");
+        for (ConstraintViolation<Country> violation : violations) {
+            errors.add(violation.getMessage());
+        }
 
-    LOGGER.debug("Country : {}", country);
+        if (!violations.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, errors.toString());
+        }
 
-    LOGGER.info("END");
+        LOGGER.debug("Country : {}", country);
 
-    return country;
-}
+        LOGGER.info("END");
+
+        return country;
+    }
 }
