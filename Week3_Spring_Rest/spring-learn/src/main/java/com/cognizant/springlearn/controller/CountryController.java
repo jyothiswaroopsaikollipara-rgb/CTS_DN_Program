@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.cognizant.springlearn.bean.Country;
+import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.service.CountryService;
 import org.springframework.web.bind.annotation.PathVariable;
+import com.cognizant.springlearn.exception.CountryNotFoundException;
+
 
 @RestController
 public class CountryController {
@@ -46,14 +49,15 @@ public class CountryController {
         return countries;
     }
     @GetMapping("/countries/{code}")
-    public Country getCountry(@PathVariable String code) {
+public Country getCountry(@PathVariable String code)
+        throws CountryNotFoundException {
 
-        LOGGER.info("START");
+    LOGGER.info("START");
 
-        Country country = countryService.getCountry(code);
+    Country country = countryService.getCountry(code);
 
-        LOGGER.info("END");
+    LOGGER.info("END");
 
-        return country;
-    }
+    return country;
+}
 }

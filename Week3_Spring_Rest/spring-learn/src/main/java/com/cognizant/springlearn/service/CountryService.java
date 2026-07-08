@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
-
+import com.cognizant.springlearn.exception.CountryNotFoundException;
 import com.cognizant.springlearn.bean.Country;
 
 @Service
@@ -24,16 +24,16 @@ public class CountryService {
         return (List<Country>) context.getBean("countryList");
     }
 
-    public Country getCountry(String code) {
+    public Country getCountry(String code) throws CountryNotFoundException {
 
-    for (Country country : getAllCountries()) {
+        for (Country country : getAllCountries()) {
 
-        if (country.getCode().equalsIgnoreCase(code)) {
-            return country;
+            if (country.getCode().equalsIgnoreCase(code)) {
+                return country;
+            }
         }
-    }
 
-    return null;
-}
+        throw new CountryNotFoundException();
+    }
 
 }
