@@ -28,31 +28,6 @@ This folder contains the mandatory hands-on exercises completed as part of **Wee
 - Applied conditional heading colors using inline CSS.
 - Displayed cohort details with the required layout.
 
-### 9. cricketapp
-- Used ES6 features including `map()`, arrow functions, destructuring, and spread operator.
-- Displayed player details and filtered players based on score.
-- Implemented conditional rendering using a flag variable.
-
-### 10. officespacerentalapp
-- Created React elements using JSX.
-- Displayed office space details and office list.
-- Applied inline CSS to display rent in different colors based on its value.
-
-### 11. eventexamplesapp
-- Implemented React event handling.
-- Handled button click events, synthetic events, and multiple method invocation.
-- Built a simple currency converter component.
-
-### 12. ticketbookingapp
-- Implemented conditional rendering.
-- Displayed Guest and User pages based on login status.
-- Implemented Login and Logout functionality.
-
-### 13. bloggerapp
-- Displayed Book, Blog, and Course details using React components.
-- Rendered lists using `map()` and unique keys.
-- Implemented component-based rendering.
-
 ## Screenshots
 
 Output screenshots for all mandatory hands-on exercises are available in the **Screenshots** folder.
@@ -74,11 +49,6 @@ Output screenshots for all mandatory hands-on exercises are available in the **S
 - ✅ ReactJS HOL 3 Completed
 - ✅ ReactJS HOL 4 Completed
 - ✅ ReactJS HOL 5 Completed
-- ✅ ReactJS HOL 9 Completed
-- ✅ ReactJS HOL 10 Completed
-- ✅ ReactJS HOL 11 Completed
-- ✅ ReactJS HOL 12 Completed
-- ✅ ReactJS HOL 13 Completed
 
 ## Repository Structure
 
@@ -89,11 +59,6 @@ Week5_React/
 ├── scorecalculatorapp
 ├── blogapp
 ├── cohorttracker
-├── cricketapp
-├── officespacerentalapp
-├── eventexamplesapp
-├── ticketbookingapp
-├── bloggerapp
 ├── Screenshots
 └── README.md
 ```
